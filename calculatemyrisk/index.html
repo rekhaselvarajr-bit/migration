@@ -1,0 +1,1285 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <title>My Heart Fitness | Integrated Exercise &amp; Risk Journey</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <div class="page">
+      <div class="experience-modal hidden" id="welcome-modal">
+        <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="welcome-modal-title">
+          <button class="modal-close" type="button" data-modal-close="" aria-label="Dismiss welcome message">×</button>
+          <div class="modal-body">
+            <div class="modal-copy">
+              <div class="modal-headline">
+                <p class="modal-kicker">Welcome to</p>
+                <h1 id="welcome-modal-title">Calculate My Risk</h1>
+              </div>
+              <p>Think of this as your digital intake form.</p>
+              <p>In just a few minutes, you’ll help us understand your unique heart health profile.</p>
+              <p>We’ll use your answers to calculate risk, and more importantly, to show how your lifestyle can change your trajectory.</p>
+  
+              <div class="modal-explainer">
+                <p class="modal-explainer__label">Prefer a quick walkthrough?</p>
+                <button
+                  type="button"
+                  class="video-help-trigger video-help-trigger--subtle"
+                  data-video-id="hR-alEQnsyA"
+                  data-video-url="https://www.youtube.com/embed/hR-alEQnsyA"
+                  data-video-watch="https://www.youtube.com/watch?v=hR-alEQnsyA"
+                  data-video-title="How this CV risk calculator works"
+                  data-video-orientation="vertical"
+                  aria-haspopup="dialog"
+                >
+                  Watch explainer
+                </button>
+              </div>
+              <button class="glass-button primary modal-cta" type="button" data-modal-start="">
+                Ready to begin?
+              </button>
+            </div>
+            <div class="modal-visual">
+              <div class="modal-visual-frame">
+                <img src="your-logo.png" alt="My Heart Fitness brand logo" class="brand__logo">
+              </div>
+              <p class="modal-caption">Crafted by My Heart Fitness</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <header class="hero">
+        <div class="brand">
+          <img src="your-logo.png" alt="My Heart Fitness brand logo" class="brand__logo">
+          <div class="brand__copy">
+            <p class="brand__kicker">My Heart Fitness</p>
+            <h1 class="brand__title">Calculate My Risk</h1>
+            <p class="brand__subtitle">
+              Your personalized heart-health intake — discover how your daily habits shape your cardiovascular future.
+            </p>
+          </div>
+        </div>
+      </header>
+
+      <main class="experience">
+        <ol class="progress" role="list">
+          <li class="progress-step is-active" data-step="0">
+            <span class="progress-counter">1</span>
+            <span class="progress-label">Profile</span>
+          </li>
+          <li class="progress-step" data-step="1">
+            <span class="progress-counter">2</span>
+            <span class="progress-label">Risk Factors</span>
+          </li>
+          <li class="progress-step" data-step="2">
+            <span class="progress-counter">3</span>
+            <span class="progress-label">Activity</span>
+          </li>
+          <li class="progress-step" data-step="3">
+            <span class="progress-counter">4</span>
+            <span class="progress-label">Results</span>
+          </li>
+        </ol>
+
+        <form id="risk-form" class="flow" novalidate="">
+          <section class="flow-step is-active" data-step="0">
+            <div class="module module--form">
+              <div class="module__header">
+                <div>
+                  <h2>Your Demographics:</h2>
+                  <p>Let’s begin with a few quick details. This helps us personalize your results just like an intake form.</p>
+                  <div class="form-explainer">
+                    <p class="form-explainer__label">Prefer a quick walkthrough?</p>
+                    <button
+                      type="button"
+                      class="video-help-trigger video-help-trigger--subtle"
+                      data-video-id="pZsZnbt25nI"
+                      data-video-url="https://www.youtube.com/embed/pZsZnbt25nI"
+                      data-video-watch="https://www.youtube.com/watch?v=pZsZnbt25nI"
+                      data-video-title="Profile walkthrough explainer"
+                      aria-haspopup="dialog"
+                    >
+                      Watch explainer
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="step-grid step-grid--baseline">
+                <div class="form-row form-row--card">
+                  <label for="full-name">Full name</label>
+                  <div class="field">
+                    <input id="full-name" name="full-name" type="text" autocomplete="name" required="">
+                  </div>
+                </div>
+
+                <div class="form-row form-row--card">
+                  <label for="email-address">Email</label>
+                  <div class="field">
+                    <input id="email-address" name="email-address" type="email" autocomplete="email" required="">
+                  </div>
+                </div>
+
+                <div class="form-row form-row--card">
+                  <label for="age">Age</label>
+                  <div class="field field--split">
+                    <input id="age" name="age" type="number" min="20" max="79" inputmode="numeric" required="">
+                    <span class="field__unit">years</span>
+                  </div>
+                </div>
+
+                <div class="form-row form-row--card">
+                  <label for="gender">Sex assigned at birth</label>
+                  <div class="field">
+                    <select id="gender" name="gender" required="">
+                      <option value="" selected disabled hidden>Select</option>
+                      <option value="male">Male</option>
+                      <option value="female">Female</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="form-row form-row--card form-row--stack form-row--span2">
+                  <label for="height-unit">Height</label>
+                  <div class="field-group field-group--height">
+                    <div class="field">
+                      <select id="height-unit" name="height-unit">
+                        <option value="cm">Centimetres</option>
+                        <option value="ft_in">Feet &amp; inches</option>
+                        <option value="in">Inches</option>
+                      </select>
+                    </div>
+                    <div class="field field--split" data-height-input="cm">
+                      <input id="height-cm" name="height-cm" type="number" min="120" max="230" step="0.1" inputmode="decimal" required="">
+                      <span class="field__unit">cm</span>
+                    </div>
+                    <div class="field field--unit-group" data-height-input="ft_in" hidden="">
+                      <div class="input-chip">
+                        <input id="height-ft" name="height-ft" type="number" min="3" max="7" step="1" inputmode="numeric" disabled="">
+                        <span class="input-chip__unit">ft</span>
+                      </div>
+                      <div class="input-chip">
+                        <input id="height-in" name="height-in" type="number" min="0" max="11" step="0.1" inputmode="decimal" disabled="">
+                        <span class="input-chip__unit">in</span>
+                      </div>
+                    </div>
+                    <div class="field field--split" data-height-input="in" hidden="">
+                      <input id="height-inches" name="height-inches" type="number" min="48" max="84" step="0.1" inputmode="decimal" disabled="">
+                      <span class="field__unit">in</span>
+                    </div>
+                  </div>
+                  <small class="field__hint">Pick the format you know best—we convert automatically.</small>
+                </div>
+
+                <div class="form-row form-row--card form-row--stack form-row--span2">
+                  <label for="weight-value">Weight</label>
+                  <div class="field-group field-group--weight">
+                    <div class="field">
+                      <select id="weight-unit" name="weight-unit">
+                        <option value="lbs">Pounds (lbs)</option>
+                        <option value="kg">Kilograms (kg)</option>
+                      </select>
+                    </div>
+                    <div class="field field--split">
+                      <input id="weight-value" name="weight-value" type="number" min="80" max="400" step="0.1" inputmode="decimal" required="">
+                      <span class="field__unit" id="weight-unit-label">lbs</span>
+                    </div>
+                  </div>
+                  <small class="field__hint">Swap units at any time—the values stay in sync.</small>
+                </div>
+              </div>
+
+              <div class="readout readout--bmi">
+                <div class="readout__meta">
+                  <span class="readout__label">Calculated BMI</span>
+                  <span class="bmi-chip" id="bmi-category">Awaiting input</span>
+                </div>
+                <span class="readout__value" id="bmi-value">—</span>
+                <p class="bmi-note" id="bmi-note">
+                  BMI, or Body Mass Index, estimates body fat based on height and weight, but it doesn’t account for
+                  muscle mass.
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <section class="flow-step" data-step="1">
+            <div class="module module--form">
+              <div class="module__header">
+                <div>
+                  <h2 id="clinical-heading">Let's get some more information</h2>
+                  <p>These details help us estimate your chance of developing chronic disease.</p>
+                </div>
+              </div>
+
+              <div class="step-grid">
+                <div class="form-row">
+                  <label for="systolic-bp">Systolic blood pressure</label>
+                  <div class="field field--split">
+                    <input id="systolic-bp" name="systolic-bp" type="number" min="90" max="220" inputmode="numeric" required="">
+                    <span class="field__unit">mmHg</span>
+                  </div>
+                </div>
+                <div class="form-row">
+                  <label for="bp-medication">On blood pressure medication?</label>
+                  <div class="field">
+                    <select id="bp-medication" name="bp-medication" required="">
+                      <option value="no">No</option>
+                      <option value="yes">Yes</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="form-row">
+                  <label for="smoker">Do you currently smoke?</label>
+                  <div class="field">
+                    <select id="smoker" name="smoker" required="">
+                      <option value="no">No</option>
+                      <option value="yes">Yes</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="form-row">
+                  <label for="diabetes">Diagnosed with diabetes?</label>
+                  <div class="field">
+                    <select id="diabetes" name="diabetes" required="">
+                      <option value="no">No</option>
+                      <option value="yes">Yes</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="form-row">
+                  <label for="cvd">History of heart disease or stroke?</label>
+                  <div class="field">
+                    <select id="cvd" name="cvd" required="">
+                      <option value="no">No</option>
+                      <option value="yes">Yes</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="form-row">
+                  <label for="cholesterol-known">Do you know your cholesterol labs?</label>
+                  <div class="field">
+                    <select id="cholesterol-known" name="cholesterol-known" required="">
+                      <option value="no" selected="">No</option>
+                      <option value="yes">Yes</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="form-row cholesterol-field">
+                  <label for="total-cholesterol">Total cholesterol</label>
+                  <div class="field field--split">
+                    <input id="total-cholesterol" name="total-cholesterol" type="number" min="100" max="350" inputmode="numeric">
+                    <span class="field__unit">mg/dL</span>
+                  </div>
+                </div>
+                <div class="form-row cholesterol-field">
+                  <label for="hdl-cholesterol">HDL cholesterol</label>
+                  <div class="field field--split">
+                    <input id="hdl-cholesterol" name="hdl-cholesterol" type="number" min="20" max="120" inputmode="numeric">
+                    <span class="field__unit">mg/dL</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="flow-step" data-step="2">
+            <div class="module module--form">
+              <div class="module__header">
+                <div>
+                  <h2>Your weekly movement</h2>
+                  <p>Enter the workouts you do most often, and we’ll convert them into MET-minutes (your weekly activity score).</p>
+                  <div class="form-explainer">
+                    <p class="form-explainer__label">Need help logging exercise?</p>
+                    <button
+                      type="button"
+                      class="video-help-trigger video-help-trigger--subtle"
+                      data-video-id="tnSgmLZ2KVY"
+                      data-video-url="https://www.youtube.com/embed/tnSgmLZ2KVY"
+                      data-video-watch="https://www.youtube.com/watch?v=tnSgmLZ2KVY"
+                      data-video-title="Exercise logging explainer"
+                      aria-haspopup="dialog"
+                    >
+                      Watch explainer
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <p class="module__lead">
+              
+                <div class="form-row">
+                  <label for="activity-type">What activity do you do most often?</label>
+                  <div class="field field--stacked activity-picker" data-component="activity-picker">
+                    <input
+                      id="activity-type"
+                      name="activity-type"
+                      type="search"
+                      inputmode="search"
+                      placeholder="Start typing to search (e.g., walking, tennis, gardening)"
+                      autocomplete="new-password"
+                      spellcheck="false"
+                      aria-describedby="activity-note"
+                      aria-autocomplete="list"
+                      aria-haspopup="listbox"
+                      aria-controls="activity-results"
+                      aria-expanded="false"
+                    />
+                    <small id="activity-note" class="field__note field__note--inline">
+                      MET values sourced from the Compendium of Physical Activities.
+                    </small>
+                    <div
+                      id="activity-results"
+                      class="activity-results"
+                      role="listbox"
+                      aria-label="Activity suggestions"
+                      data-visible="false"
+                    ></div>
+                  </div>
+                </div>
+                <div class="form-row">
+                  <label for="session-duration">How long is each session?</label>
+                  <div class="field field--split">
+                    <input id="session-duration" name="session-duration" type="number" min="0" max="240" step="1">
+                    <span class="field__unit">minutes</span>
+                  </div>
+                </div>
+                <div class="form-row">
+                  <label for="weekly-frequency">How many times per week?</label>
+                  <div class="field field--split">
+                    <input id="weekly-frequency" name="weekly-frequency" type="number" min="0" max="14" step="1">
+                    <span class="field__unit">sessions</span>
+                  </div>
+                </div>
+              
+              <div class="met-summary">
+                <div>
+                  <p class="met-summary__label">Estimated weekly MET-minutes</p>
+                  <p class="met-summary__value" id="computed-met">0</p>
+                  <p class="met-summary__math" id="computed-breakdown">—</p>
+                </div>
+              </div>
+            </div>
+          </section></form>
+
+          <section class="flow-step" data-step="3">
+            <div class="module module--results">
+              <div class="module__header">
+                <div>
+                  <h2 id="results-heading">, Here are insights on your cardiovascular risk</h2>
+                </div>
+                <div class="module__actions">
+                  <button
+                    type="button"
+                    class="video-help-trigger"
+                    data-video-id="8niB4w-hjNo"
+                    data-video-url="https://www.youtube.com/embed/8niB4w-hjNo"
+                    data-video-watch="https://www.youtube.com/watch?v=8niB4w-hjNo"
+                    data-video-title="Understanding your cardiovascular risk results"
+                    aria-haspopup="dialog"
+                  >
+                    Watch explainer
+                  </button>
+                  <button type="button" class="glass-button download-summary-btn" id="download-summary">
+                    Download PDF summary
+                  </button>
+                </div>
+              </div>
+
+              <div class="results-layout">
+                <div class="results-chart">
+                  <canvas id="survivalChart" aria-label="Projected survival curve" role="img"></canvas>
+                </div>
+                <div class="results-summary">
+                  <div class="result-card result-card--accent">
+                    <h3 class="result-card__label">Projected risk with activity</h3>
+                    <p class="result-value" id="adjusted-risk">—</p>
+                    <p class="result-note" id="adjusted-note">Your updated 10-year cardiovascular risk.</p>
+                  </div>
+                  <div class="risk-category">
+                    <p class="risk-category__label">Risk category</p>
+                    <p class="risk-category__value" id="risk-category">—</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="results-met-card" id="relative-risk-card">
+                <div class="results-met-card__inner">
+                  <div class="results-met-controls results-met-card__face results-met-card__face--front">
+                    <div class="results-met-header">
+                      <label for="results-met-slider" class="results-met-label">See how your risk score changes as your exercise increases or decreases</label>
+                      <span class="results-met-value" id="results-met-value">450 MET-min/wk</span>
+                    </div>
+                    <input type="range" id="results-met-slider" class="results-met-slider" min="0" max="1400" step="10" value="450">
+                    <p class="results-met-narrative" id="results-activity-narrative">
+                      See what your new exercise routine may look like.
+                    </p>
+                    <div class="results-met-helper-row">
+                      <button
+                        type="button"
+                        class="video-help-trigger video-help-trigger--subtle"
+                        data-video-id="gnn7BDwBuXM"
+                        data-video-url="https://www.youtube.com/embed/gnn7BDwBuXM"
+                        data-video-watch="https://www.youtube.com/watch?v=gnn7BDwBuXM"
+                        data-video-title="How to use the MET slider"
+                        aria-haspopup="dialog"
+                      >
+                        Watch explainer
+                      </button>
+                      <button type="button" class="relative-risk-trigger" id="relative-risk-trigger" aria-controls="relative-risk-message">
+                        Don't understand what these results mean? Click here &rarr;
+                      </button>
+                    </div>
+                  </div>
+                  <div class="results-met-controls results-met-card__face results-met-card__face--back" aria-live="polite">
+                    <p class="relative-risk-title">Relative to your peers</p>
+                    <p class="relative-risk-message" id="relative-risk-message" aria-live="polite">
+                      Complete the earlier steps to compare your risk.
+                    </p>
+                    <button type="button" class="relative-risk-back" id="relative-risk-back">
+                      Back to MET slider
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <details class="results-details" id="artery-details">
+                <summary>
+                  <span>See the projected state of your arteries currently and how they can possibly improve</span>
+                  <button
+                    type="button"
+                    class="video-help-trigger video-help-trigger--summary"
+                    data-video-id="iSNuozYrNbM"
+                    data-video-url="https://www.youtube.com/embed/iSNuozYrNbM"
+                    data-video-watch="https://www.youtube.com/watch?v=iSNuozYrNbM"
+                    data-video-title="Projected artery changes explainer"
+                    aria-haspopup="dialog"
+                  >
+                    Watch explainer
+                  </button>
+                </summary>
+                <div class="details-body">
+                  <div class="module module--visual">
+                    <div class="module__header">
+                      <div>
+                        <h2>Watch your artery respond</h2>
+                        <p>Move the sliders to change your weekly exercise and see how smoothly blood can flow.</p>
+                      </div>
+                    </div>
+                    <div class="visual-layout">
+                      <section class="visual-controls">
+                        <label for="exercise-slider">Weekly exercise (minutes)</label>
+                        <input type="range" id="exercise-slider" min="0" max="300" step="10" value="150">
+                        <p class="activity-narrative" id="activity-narrative">
+                          Slide to pick the amount of weekly movement that feels realistic for you.
+                        </p>
+                        <div class="mood-panel">
+                          <div class="mood-emoji" id="mood-emoji" aria-hidden="true">
+                            <svg viewBox="0 0 120 120" role="img">
+                              <defs>
+                                <radialGradient id="emoji-face" cx="50%" cy="45%" r="60%">
+                                  <stop offset="0%" stop-color="#ffdcae"></stop>
+                                  <stop offset="55%" stop-color="#f8b764"></stop>
+                                  <stop offset="100%" stop-color="#e88b32"></stop>
+                                </radialGradient>
+                                <radialGradient id="emoji-gloss" cx="40%" cy="30%" r="50%">
+                                  <stop offset="0%" stop-color="rgba(255,255,255,0.55)"></stop>
+                                  <stop offset="100%" stop-color="rgba(255,255,255,0)"></stop>
+                                </radialGradient>
+                              </defs>
+                              <circle cx="60" cy="60" r="54" fill="url(#emoji-face)"></circle>
+                              <circle cx="46" cy="48" r="8" fill="#331d0b" opacity="0.92"></circle>
+                              <circle cx="74" cy="48" r="8" fill="#331d0b" opacity="0.92"></circle>
+                              <path id="emoji-mouth" d="M38 78 C 52 92 68 92 82 78" fill="none" stroke="#331d0b" stroke-width="6" stroke-linecap="round"></path>
+                              <path d="M24 36 C 40 22 80 22 96 36" fill="none" stroke="rgba(255,255,255,0.45)" stroke-width="8" stroke-linecap="round" opacity="0.8"></path>
+                            </svg>
+                          </div>
+                          <p id="mood-caption">More movement keeps this artery relaxed and happy.</p>
+                        </div>
+                      </section>
+
+                      <section class="visual-stage">
+                        <figure class="view-card">
+                          <div class="canvas-frame">
+                            <svg id="artery-longitudinal" viewBox="0 0 480 260" role="img" aria-labelledby="artery-long-title artery-long-desc">
+                              <title id="artery-long-title">Artery along its length</title>
+                              <desc id="artery-long-desc">
+                                A curved artery rendered with translucent walls and flowing red blood cells that react to exercise-linked inflammation.
+                              </desc>
+
+                        <defs>
+                          <linearGradient id="scene-bg" x1="0%" y1="0%" x2="0%" y2="100%">
+                            <stop offset="0%" stop-color="#132d52"></stop>
+                            <stop offset="50%" stop-color="#1b4d8a"></stop>
+                            <stop offset="100%" stop-color="#f5e6d4"></stop>
+                          </linearGradient>
+                          <linearGradient id="wall-gradient" x1="40" y1="200" x2="430" y2="70" gradientUnits="userSpaceOnUse">
+                            <stop offset="0%" stop-color="#a64028"></stop>
+                            <stop offset="35%" stop-color="#c35a32"></stop>
+                            <stop offset="70%" stop-color="#de7d45"></stop>
+                            <stop offset="100%" stop-color="#a64028"></stop>
+                          </linearGradient>
+                          <linearGradient id="wall-depth-gradient" x1="30" y1="230" x2="440" y2="40" gradientUnits="userSpaceOnUse">
+                            <stop offset="0%" stop-color="rgba(38,10,2,0.45)"></stop>
+                            <stop offset="35%" stop-color="rgba(82,24,10,0.35)"></stop>
+                            <stop offset="65%" stop-color="rgba(132,52,24,0.22)"></stop>
+                            <stop offset="100%" stop-color="rgba(38,10,2,0.45)"></stop>
+                          </linearGradient>
+                          <linearGradient id="wall-highlight" x1="40" y1="230" x2="430" y2="60" gradientUnits="userSpaceOnUse">
+                            <stop offset="0%" stop-color="rgba(255,181,133,0.4)"></stop>
+                            <stop offset="45%" stop-color="rgba(255,214,186,0.75)"></stop>
+                            <stop offset="100%" stop-color="rgba(255,255,255,0.05)"></stop>
+                          </linearGradient>
+                          <linearGradient id="wall-inner-shadow" x1="40" y1="204" x2="430" y2="90" gradientUnits="userSpaceOnUse">
+                            <stop offset="0%" stop-color="rgba(72,23,12,0.45)"></stop>
+                            <stop offset="45%" stop-color="rgba(88,24,10,0.25)"></stop>
+                            <stop offset="100%" stop-color="rgba(32,10,5,0.35)"></stop>
+                          </linearGradient>
+                          <linearGradient id="artery-glaze-gradient" x1="60" y1="220" x2="420" y2="80" gradientUnits="userSpaceOnUse">
+                            <stop offset="0%" stop-color="rgba(255,255,255,0.65)"></stop>
+                            <stop offset="55%" stop-color="rgba(255,252,243,0.35)"></stop>
+                            <stop offset="100%" stop-color="rgba(255,255,255,0.05)"></stop>
+                          </linearGradient>
+                          <radialGradient id="lumen-gradient" cx="45%" cy="45%" r="65%">
+                            <stop offset="0%" stop-color="#ff9595"></stop>
+                            <stop offset="40%" stop-color="#ff6f6f"></stop>
+                            <stop offset="100%" stop-color="#b01c33"></stop>
+                          </radialGradient>
+                          <radialGradient id="lumen-core" cx="48%" cy="35%" r="75%">
+                            <stop offset="0%" stop-color="rgba(255,210,210,0.7)"></stop>
+                            <stop offset="55%" stop-color="rgba(255,144,144,0.35)"></stop>
+                            <stop offset="100%" stop-color="rgba(255,86,86,0.15)"></stop>
+                          </radialGradient>
+                          <radialGradient id="rbc-gradient" cx="52%" cy="40%" r="70%">
+                            <stop offset="0%" stop-color="#ffe1e1"></stop>
+                            <stop offset="40%" stop-color="#ff5959"></stop>
+                            <stop offset="100%" stop-color="#8a0f20"></stop>
+                          </radialGradient>
+                          <radialGradient id="fat-deposit-gradient" cx="52%" cy="42%" r="65%">
+                            <stop offset="0%" stop-color="rgba(255,252,196,0.95)"></stop>
+                            <stop offset="55%" stop-color="rgba(255,210,92,0.85)"></stop>
+                            <stop offset="100%" stop-color="rgba(214,142,18,0.9)"></stop>
+                          </radialGradient>
+                          <filter id="fat-soft-shadow" x="-35%" y="-35%" width="170%" height="170%">
+                            <feDropShadow dx="-1.2" dy="2.6" stdDeviation="1.7" flood-color="#6a3602" flood-opacity="0.38"></feDropShadow>
+                            <feDropShadow dx="1" dy="-1" stdDeviation="0.9" flood-color="#fff5c8" flood-opacity="0.45"></feDropShadow>
+                          </filter>
+                          <filter id="wall-texture" x="-20%" y="-20%" width="140%" height="140%">
+                            <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="3" seed="12" result="noise"></feTurbulence>
+                            <feComposite in="noise" in2="SourceGraphic" operator="arithmetic" k1="0" k2="0.25" k3="0.75"></feComposite>
+                            <feGaussianBlur stdDeviation="0.6"></feGaussianBlur>
+                          </filter>
+                          <filter id="wall-shadow-blur" x="-30%" y="-30%" width="160%" height="160%">
+                            <feGaussianBlur stdDeviation="6"></feGaussianBlur>
+                          </filter>
+                          <filter id="soft-glow" x="-20%" y="-20%" width="140%" height="140%">
+                            <feGaussianBlur stdDeviation="6" result="blur"></feGaussianBlur>
+                            <feMerge>
+                              <feMergeNode in="blur"></feMergeNode>
+                              <feMergeNode in="SourceGraphic"></feMergeNode>
+                            </feMerge>
+                          </filter>
+                        </defs>
+
+                        <rect id="scene-background" x="0" y="0" width="480" height="260" fill="url(#scene-bg)"></rect>
+
+                        <g id="artery">
+                          <path id="artery-centerline" d="M 40 200 C 150 120 280 160 430 80" fill="none" stroke="transparent" stroke-width="1"></path>
+
+                          <path id="artery-wall-shadow" d="M 40 200 C 150 120 280 160 430 80" fill="none" stroke="url(#wall-depth-gradient)" stroke-width="126" stroke-linecap="round" stroke-linejoin="round" opacity="0.45" filter="url(#wall-shadow-blur)"></path>
+
+                          <path id="artery-wall" d="M 40 200 C 150 120 280 160 430 80" fill="none" stroke="url(#wall-gradient)" stroke-width="102" stroke-linecap="round" stroke-linejoin="round" filter="url(#wall-texture)" opacity="0.96"></path>
+
+                          <path id="artery-wall-inner-shadow" d="M 40 200 C 150 120 280 160 430 80" fill="none" stroke="url(#wall-inner-shadow)" stroke-width="86" stroke-linecap="round" stroke-linejoin="round" opacity="0.45"></path>
+
+                          <path id="artery-highlight" d="M 45 194 C 150 118 286 152 425 86" fill="none" stroke="url(#wall-highlight)" stroke-width="78" stroke-linecap="round" stroke-linejoin="round" opacity="0.9"></path>
+
+                          <path id="artery-lumen" d="M 40 200 C 150 120 280 160 430 80" fill="none" stroke="url(#lumen-gradient)" stroke-width="72" stroke-linecap="round" stroke-linejoin="round" opacity="0.95" filter="url(#soft-glow)"></path>
+
+                          <path id="artery-lumen-core" d="M 42 198 C 152 118 282 158 432 78" fill="none" stroke="url(#lumen-core)" stroke-width="58" stroke-linecap="round" stroke-linejoin="round" opacity="0.8"></path>
+
+                          <path id="artery-glaze" d="M 44 195 C 155 115 285 155 428 82" fill="none" stroke="url(#artery-glaze-gradient)" stroke-width="60" stroke-linecap="round" stroke-linejoin="round" opacity="0.5" pointer-events="none"></path>
+
+
+                          <g id="artery-cells"></g>
+                          <g id="artery-fat-blobs" filter="url(#fat-soft-shadow)"></g>
+                        </g>
+                      </svg>
+                    </div>
+                    <div class="view-legend">
+                      <p class="view-note" id="flow-note">
+                        This view peeks inside an artery. Hit the weekly activity sweet spot and the opening stays wide so blood cells glide through without bumping around.
+                      </p>
+                    </div>
+                  </figure>
+                </section>
+              </div>
+            </div>
+              </div></details>
+
+              <details class="results-details" id="impact-details">
+                <summary>
+                  <span>There's more! See how exercise can improve your risk in other areas</span>
+                  <button
+                    type="button"
+                    class="video-help-trigger video-help-trigger--summary"
+                    data-video-id="sJqYKScKRrM"
+                    data-video-url="https://www.youtube.com/embed/sJqYKScKRrM"
+                    data-video-watch="https://www.youtube.com/watch?v=sJqYKScKRrM"
+                    data-video-title="Exercise ripple effects overview"
+                    aria-haspopup="dialog"
+                  >
+                    Watch explainer
+                  </button>
+                </summary>
+                <div class="details-body">
+                  <div class="impact-section">
+                    <div class="module__header">
+                      <h2>What changes as activity increases?</h2>
+                    </div>
+                    <div class="impact-met-controls">
+                      <div class="impact-met-header">
+                        <label for="impact-met-slider" class="impact-met-label">Slide to explore how different effort levels influence these outcomes</label>
+                        <span class="impact-met-value" id="impact-met-value">450 MET-min/wk</span>
+                      </div>
+                      <input type="range" id="impact-met-slider" class="results-met-slider impact-met-slider" min="0" max="1400" step="10" value="450">
+                      <p class="impact-met-narrative" id="impact-activity-narrative">
+                        See what your new exercise routine may look like.
+                      </p>
+                    </div>
+                    <div class="impact-stack">
+                      <article class="impact-panel">
+                        <header>
+                          <h3>Heart &amp; circulation</h3>
+                          <p class="panel-tag">Cardiovascular</p>
+                        </header>
+                        <div class="impact-carousel" data-impact-carousel>
+                          <div class="impact-carousel__slides" data-impact-slides>
+                            <div class="impact-carousel__slide is-active" data-impact-slide>
+                              <div class="metric-card" data-metric="total-cvd">
+                                <div class="metric-card__inner">
+<!--Front Face-->
+                                  <div class="metric-card__face metric-card__face--front">
+                                    <h3>All heart &amp; vessel events</h3>
+                                    <p class="value">—</p>
+                                    <p class="caption">Total cardiovascular disease risk.</p>
+                                    <p class="flip-hint">Click to flip</p>
+                                  </div>
+
+                                  <div class="metric-card__face metric-card__face--back">
+                                    <!-- your back content here -->
+
+    <p class="metric-card__back-title">Sedentary vs your plan</p>
+    <div class="metric-card__bars">
+      <div class="metric-card__bar">
+        <span class="metric-card__bar-label">Sedentary</span>
+        <div class="metric-card__bar-track" data-bar-track="sedentary">
+          <div class="metric-card__bar-fill" data-bar-fill="sedentary"></div>
+        </div>
+        <span class="metric-card__bar-value" data-bar-value="sedentary">—</span>
+      </div>
+      <div class="metric-card__bar">
+        <span class="metric-card__bar-label">Your plan</span>
+        <div class="metric-card__bar-track" data-bar-track="active">
+          <div class="metric-card__bar-fill is-active" data-bar-fill="active"></div>
+        </div>
+        <span class="metric-card__bar-value" data-bar-value="active">—</span>
+      </div>
+    </div>
+    <button type="button" class="metric-card__back-close" aria-label="Return to summary view">
+      Close comparison
+    </button>
+  </div></div></div>
+                            </div>
+                            <div class="impact-carousel__slide" data-impact-slide hidden>
+                              <div class="metric-card" data-metric="coronary-heart-disease"><div class="metric-card__inner"><div class="metric-card__face metric-card__face--front">
+                            <h3>Heart attack risk</h3>
+                            <p class="value">—</p>
+                            <p class="caption">Likelihood of coronary heart disease.</p>
+                            <p class="flip-hint">Click to flip</p>
+                          </div><div class="metric-card__face metric-card__face--back">
+    <p class="metric-card__back-title">Sedentary vs your plan</p>
+    <div class="metric-card__bars">
+      <div class="metric-card__bar">
+        <span class="metric-card__bar-label">Sedentary</span>
+        <div class="metric-card__bar-track" data-bar-track="sedentary">
+          <div class="metric-card__bar-fill" data-bar-fill="sedentary"></div>
+        </div>
+        <span class="metric-card__bar-value" data-bar-value="sedentary">—</span>
+      </div>
+      <div class="metric-card__bar">
+        <span class="metric-card__bar-label">Your plan</span>
+        <div class="metric-card__bar-track" data-bar-track="active">
+          <div class="metric-card__bar-fill is-active" data-bar-fill="active"></div>
+        </div>
+        <span class="metric-card__bar-value" data-bar-value="active">—</span>
+      </div>
+    </div>
+    <button type="button" class="metric-card__back-close" aria-label="Return to summary view">
+      Close comparison
+    </button>
+  </div></div></div>
+                            </div>
+                            <div class="impact-carousel__slide" data-impact-slide hidden>
+                              <div class="metric-card" data-metric="stroke-incidence"><div class="metric-card__inner"><div class="metric-card__face metric-card__face--front">
+                            <h3>Stroke risk</h3>
+                            <p class="value">—</p>
+                            <p class="caption">Chance of any stroke event.</p>
+                            <p class="flip-hint">Click to flip</p>
+                          </div><div class="metric-card__face metric-card__face--back">
+    <p class="metric-card__back-title">Sedentary vs your plan</p>
+    <div class="metric-card__bars">
+      <div class="metric-card__bar">
+        <span class="metric-card__bar-label">Sedentary</span>
+        <div class="metric-card__bar-track" data-bar-track="sedentary">
+          <div class="metric-card__bar-fill" data-bar-fill="sedentary"></div>
+        </div>
+        <span class="metric-card__bar-value" data-bar-value="sedentary">—</span>
+      </div>
+      <div class="metric-card__bar">
+        <span class="metric-card__bar-label">Your plan</span>
+        <div class="metric-card__bar-track" data-bar-track="active">
+          <div class="metric-card__bar-fill is-active" data-bar-fill="active"></div>
+        </div>
+        <span class="metric-card__bar-value" data-bar-value="active">—</span>
+      </div>
+    </div>
+    <button type="button" class="metric-card__back-close" aria-label="Return to summary view">
+      Close comparison
+    </button>
+  </div></div></div>
+                            </div>
+                            <div class="impact-carousel__slide" data-impact-slide hidden>
+                              <div class="metric-card" data-metric="heart-failure-incidence"><div class="metric-card__inner"><div class="metric-card__face metric-card__face--front">
+                            <h3>Heart failure risk</h3>
+                            <p class="value">—</p>
+                            <p class="caption">Chance of developing heart failure.</p>
+                            <p class="flip-hint">Click to flip</p>
+                          </div><div class="metric-card__face metric-card__face--back">
+    <p class="metric-card__back-title">Sedentary vs your plan</p>
+    <div class="metric-card__bars">
+      <div class="metric-card__bar">
+        <span class="metric-card__bar-label">Sedentary</span>
+        <div class="metric-card__bar-track" data-bar-track="sedentary">
+          <div class="metric-card__bar-fill" data-bar-fill="sedentary"></div>
+        </div>
+        <span class="metric-card__bar-value" data-bar-value="sedentary">—</span>
+      </div>
+      <div class="metric-card__bar">
+        <span class="metric-card__bar-label">Your plan</span>
+        <div class="metric-card__bar-track" data-bar-track="active">
+          <div class="metric-card__bar-fill is-active" data-bar-fill="active"></div>
+        </div>
+        <span class="metric-card__bar-value" data-bar-value="active">—</span>
+      </div>
+    </div>
+    <button type="button" class="metric-card__back-close" aria-label="Return to summary view">
+      Close comparison
+    </button>
+  </div></div></div>
+                            </div>
+                            <div class="impact-carousel__slide" data-impact-slide hidden>
+                              <div class="metric-card" data-metric="cvd-mortality"><div class="metric-card__inner"><div class="metric-card__face metric-card__face--front">
+                            <h3>Heart-related deaths</h3>
+                            <p class="value">—</p>
+                            <p class="caption">Chance of dying from heart disease.</p>
+                            <p class="flip-hint">Click to flip</p>
+                          </div><div class="metric-card__face metric-card__face--back">
+    <p class="metric-card__back-title">Sedentary vs your plan</p>
+    <div class="metric-card__bars">
+      <div class="metric-card__bar">
+        <span class="metric-card__bar-label">Sedentary</span>
+        <div class="metric-card__bar-track" data-bar-track="sedentary">
+          <div class="metric-card__bar-fill" data-bar-fill="sedentary"></div>
+        </div>
+        <span class="metric-card__bar-value" data-bar-value="sedentary">—</span>
+      </div>
+      <div class="metric-card__bar">
+        <span class="metric-card__bar-label">Your plan</span>
+        <div class="metric-card__bar-track" data-bar-track="active">
+          <div class="metric-card__bar-fill is-active" data-bar-fill="active"></div>
+        </div>
+        <span class="metric-card__bar-value" data-bar-value="active">—</span>
+      </div>
+    </div>
+    <button type="button" class="metric-card__back-close" aria-label="Return to summary view">
+      Close comparison
+    </button>
+  </div></div></div>
+                            </div>
+                          </div>
+                          <div class="impact-carousel__controls">
+                            <button type="button" class="impact-carousel__control" data-carousel-prev aria-label="Show previous heart metric">
+                              ← Previous
+                            </button>
+                            <div class="impact-carousel__status" data-carousel-status aria-live="polite" aria-atomic="true"></div>
+                            <button type="button" class="impact-carousel__control" data-carousel-next aria-label="Show next heart metric">
+                              Next →
+                            </button>
+                          </div>
+                        </div>
+                      </article>
+
+                      <article class="impact-panel">
+                        <header>
+                          <h3>Cancer &amp; longevity</h3>
+                          <p class="panel-tag">Oncology</p>
+                        </header>
+                        <div class="impact-carousel" data-impact-carousel>
+                          <div class="impact-carousel__slides" data-impact-slides>
+                            <div class="impact-carousel__slide is-active" data-impact-slide>
+                              <div class="metric-card" data-metric="cancer-incidence"><div class="metric-card__inner"><div class="metric-card__face metric-card__face--front">
+                            <h3>New cancer diagnoses</h3>
+                            <p class="value">—</p>
+                            <p class="caption">Overall chance of being diagnosed with cancer.</p>
+                            <p class="flip-hint">Click to flip</p>
+                          </div><div class="metric-card__face metric-card__face--back">
+    <p class="metric-card__back-title">Sedentary vs your plan</p>
+    <div class="metric-card__bars">
+      <div class="metric-card__bar">
+        <span class="metric-card__bar-label">Sedentary</span>
+        <div class="metric-card__bar-track" data-bar-track="sedentary">
+          <div class="metric-card__bar-fill" data-bar-fill="sedentary"></div>
+        </div>
+        <span class="metric-card__bar-value" data-bar-value="sedentary">—</span>
+      </div>
+      <div class="metric-card__bar">
+        <span class="metric-card__bar-label">Your plan</span>
+        <div class="metric-card__bar-track" data-bar-track="active">
+          <div class="metric-card__bar-fill is-active" data-bar-fill="active"></div>
+        </div>
+        <span class="metric-card__bar-value" data-bar-value="active">—</span>
+      </div>
+    </div>
+    <button type="button" class="metric-card__back-close" aria-label="Return to summary view">
+      Close comparison
+    </button>
+  </div></div></div>
+                            </div>
+                            <div class="impact-carousel__slide" data-impact-slide hidden>
+                              <div class="metric-card" data-metric="cancer-mortality"><div class="metric-card__inner"><div class="metric-card__face metric-card__face--front">
+                            <h2>Cancer-related deaths</h2>
+                            <p class="value">—</p>
+                            <p class="caption">Risk of dying from cancer.</p>
+                            <p class="flip-hint">Click to flip</p>
+                          </div><div class="metric-card__face metric-card__face--back">
+    <p class="metric-card__back-title">Sedentary vs your plan</p>
+    <div class="metric-card__bars">
+      <div class="metric-card__bar">
+        <span class="metric-card__bar-label">Sedentary</span>
+        <div class="metric-card__bar-track" data-bar-track="sedentary">
+          <div class="metric-card__bar-fill" data-bar-fill="sedentary"></div>
+        </div>
+        <span class="metric-card__bar-value" data-bar-value="sedentary">—</span>
+      </div>
+      <div class="metric-card__bar">
+        <span class="metric-card__bar-label">Your plan</span>
+        <div class="metric-card__bar-track" data-bar-track="active">
+          <div class="metric-card__bar-fill is-active" data-bar-fill="active"></div>
+        </div>
+        <span class="metric-card__bar-value" data-bar-value="active">—</span>
+      </div>
+    </div>
+    <button type="button" class="metric-card__back-close" aria-label="Return to summary view">
+      Close comparison
+    </button>
+  </div></div></div>
+                            </div>
+                            <div class="impact-carousel__slide" data-impact-slide hidden>
+                              <div class="metric-card" data-metric="all-cause-mortality"><div class="metric-card__inner"><div class="metric-card__face metric-card__face--front">
+                            <h3>Death from any cause</h3>
+                            <p class="value">—</p>
+                            <p class="caption">Overall risk of dying early.</p>
+                            <p class="flip-hint">Click to flip</p>
+                          </div><div class="metric-card__face metric-card__face--back">
+    <p class="metric-card__back-title">Sedentary vs your plan</p>
+    <div class="metric-card__bars">
+      <div class="metric-card__bar">
+        <span class="metric-card__bar-label">Sedentary</span>
+        <div class="metric-card__bar-track" data-bar-track="sedentary">
+          <div class="metric-card__bar-fill" data-bar-fill="sedentary"></div>
+        </div>
+        <span class="metric-card__bar-value" data-bar-value="sedentary">—</span>
+      </div>
+      <div class="metric-card__bar">
+        <span class="metric-card__bar-label">Your plan</span>
+        <div class="metric-card__bar-track" data-bar-track="active">
+          <div class="metric-card__bar-fill is-active" data-bar-fill="active"></div>
+        </div>
+        <span class="metric-card__bar-value" data-bar-value="active">—</span>
+      </div>
+    </div>
+    <button type="button" class="metric-card__back-close" aria-label="Return to summary view">
+      Close comparison
+    </button>
+  </div></div></div>
+                            </div>
+                          </div>
+                          <div class="impact-carousel__controls">
+                            <button type="button" class="impact-carousel__control" data-carousel-prev aria-label="Show previous cancer metric">
+                              ← Previous
+                            </button>
+                            <div class="impact-carousel__status" data-carousel-status aria-live="polite" aria-atomic="true"></div>
+                            <button type="button" class="impact-carousel__control" data-carousel-next aria-label="Show next cancer metric">
+                              Next →
+                            </button>
+                          </div>
+                        </div>
+                      </article>
+
+                      <article class="impact-panel">
+                        <header>
+                          <h3>Mood &amp; daily performance</h3>
+                          <p class="panel-tag">Mental &amp; workplace</p>
+                        </header>
+                        <div class="impact-carousel" data-impact-carousel>
+                          <div class="impact-carousel__slides" data-impact-slides>
+                            <div class="impact-carousel__slide is-active" data-impact-slide>
+                              <div class="metric-card" data-metric="depression-incidence"><div class="metric-card__inner"><div class="metric-card__face metric-card__face--front">
+                            <h3>Depression risk</h3>
+                            <p class="value">—</p>
+                            <p class="caption">Chance of developing depressive symptoms.</p>
+                            <p class="flip-hint">Click to flip</p>
+                          </div><div class="metric-card__face metric-card__face--back">
+    <p class="metric-card__back-title">Sedentary vs your plan</p>
+    <div class="metric-card__bars">
+      <div class="metric-card__bar">
+        <span class="metric-card__bar-label">Sedentary</span>
+        <div class="metric-card__bar-track" data-bar-track="sedentary">
+          <div class="metric-card__bar-fill" data-bar-fill="sedentary"></div>
+        </div>
+        <span class="metric-card__bar-value" data-bar-value="sedentary">—</span>
+      </div>
+      <div class="metric-card__bar">
+        <span class="metric-card__bar-label">Your plan</span>
+        <div class="metric-card__bar-track" data-bar-track="active">
+          <div class="metric-card__bar-fill is-active" data-bar-fill="active"></div>
+        </div>
+        <span class="metric-card__bar-value" data-bar-value="active">—</span>
+      </div>
+    </div>
+    <button type="button" class="metric-card__back-close" aria-label="Return to summary view">
+      Close comparison
+    </button>
+  </div></div></div>
+                            </div>
+                            <div class="impact-carousel__slide" data-impact-slide hidden>
+                              <div class="metric-card" data-metric="major-depressive-disorder"><div class="metric-card__inner"><div class="metric-card__face metric-card__face--front">
+                            <h3>Major depressive disorder</h3>
+                            <p class="value">—</p>
+                            <p class="caption">Risk of a clinical diagnosis.</p>
+                            <p class="flip-hint">Click to flip</p>
+                          </div><div class="metric-card__face metric-card__face--back">
+    <p class="metric-card__back-title">Sedentary vs your plan</p>
+    <div class="metric-card__bars">
+      <div class="metric-card__bar">
+        <span class="metric-card__bar-label">Sedentary</span>
+        <div class="metric-card__bar-track" data-bar-track="sedentary">
+          <div class="metric-card__bar-fill" data-bar-fill="sedentary"></div>
+        </div>
+        <span class="metric-card__bar-value" data-bar-value="sedentary">—</span>
+      </div>
+      <div class="metric-card__bar">
+        <span class="metric-card__bar-label">Your plan</span>
+        <div class="metric-card__bar-track" data-bar-track="active">
+          <div class="metric-card__bar-fill is-active" data-bar-fill="active"></div>
+        </div>
+        <span class="metric-card__bar-value" data-bar-value="active">—</span>
+      </div>
+    </div>
+    <button type="button" class="metric-card__back-close" aria-label="Return to summary view">
+      Close comparison
+    </button>
+  </div></div></div>
+                            </div>
+                            <div class="impact-carousel__slide" data-impact-slide hidden>
+                              <div class="metric-card metric-card--highlight" data-metric="productivity"><div class="metric-card__inner"><div class="metric-card__face metric-card__face--front">
+                            <h2>Workday performance</h2>
+                            <p class="value">—</p>
+                            <p class="caption">Estimated boost in productivity and focus.</p>
+                            <p class="flip-hint">Click to flip</p>
+                          </div><div class="metric-card__face metric-card__face--back">
+    <p class="metric-card__back-title">Sedentary vs your plan</p>
+    <div class="metric-card__bars">
+      <div class="metric-card__bar">
+        <span class="metric-card__bar-label">Sedentary</span>
+        <div class="metric-card__bar-track" data-bar-track="sedentary">
+          <div class="metric-card__bar-fill" data-bar-fill="sedentary"></div>
+        </div>
+        <span class="metric-card__bar-value" data-bar-value="sedentary">—</span>
+      </div>
+      <div class="metric-card__bar">
+        <span class="metric-card__bar-label">Your plan</span>
+        <div class="metric-card__bar-track" data-bar-track="active">
+          <div class="metric-card__bar-fill is-active" data-bar-fill="active"></div>
+        </div>
+        <span class="metric-card__bar-value" data-bar-value="active">—</span>
+      </div>
+    </div>
+    <button type="button" class="metric-card__back-close" aria-label="Return to summary view">
+      Close comparison
+    </button>
+  </div></div></div>
+                            </div>
+                          </div>
+                          <div class="impact-carousel__controls">
+                            <button type="button" class="impact-carousel__control" data-carousel-prev aria-label="Show previous mood metric">
+                              ← Previous
+                            </button>
+                            <div class="impact-carousel__status" data-carousel-status aria-live="polite" aria-atomic="true"></div>
+                            <button type="button" class="impact-carousel__control" data-carousel-next aria-label="Show next mood metric">
+                              Next →
+                            </button>
+                          </div>
+                        </div>
+                      </article>
+                      <article class="impact-panel">
+                        <header>
+                          <h3>Cost of care</h3>
+                          <p class="panel-tag">Financial impact</p>
+                        </header>
+                        <div class="impact-carousel" data-impact-carousel>
+                          <div class="impact-carousel__slides" data-impact-slides>
+                            <div class="impact-carousel__slide is-active" data-impact-slide>
+                              <div class="metric-card metric-card--highlight" data-metric="healthcare-savings"><div class="metric-card__inner"><div class="metric-card__face metric-card__face--front">
+                            <h3>Annual healthcare savings</h3>
+                            <p class="value">—</p>
+                            <p class="caption">Projected yearly reduction in healthcare spend.</p>
+                            <p class="flip-hint">Click to flip</p>
+                          </div><div class="metric-card__face metric-card__face--back">
+    <p class="metric-card__back-title">Sedentary vs your plan</p>
+    <div class="metric-card__bars">
+      <div class="metric-card__bar">
+        <span class="metric-card__bar-label">Sedentary</span>
+        <div class="metric-card__bar-track" data-bar-track="sedentary">
+          <div class="metric-card__bar-fill" data-bar-fill="sedentary"></div>
+        </div>
+        <span class="metric-card__bar-value" data-bar-value="sedentary">—</span>
+      </div>
+      <div class="metric-card__bar">
+        <span class="metric-card__bar-label">Your plan</span>
+        <div class="metric-card__bar-track" data-bar-track="active">
+          <div class="metric-card__bar-fill is-active" data-bar-fill="active"></div>
+        </div>
+        <span class="metric-card__bar-value" data-bar-value="active">—</span>
+      </div>
+    </div>
+    <button type="button" class="metric-card__back-close" aria-label="Return to summary view">
+      Close comparison
+    </button>
+  </div></div></div>
+                            </div>
+                          </div>
+                          <div class="impact-carousel__controls">
+                            <button type="button" class="impact-carousel__control" data-carousel-prev aria-label="Show previous cost metric">
+                              ← Previous
+                            </button>
+                            <div class="impact-carousel__status" data-carousel-status aria-live="polite" aria-atomic="true"></div>
+                            <button type="button" class="impact-carousel__control" data-carousel-next aria-label="Show next cost metric">
+                              Next →
+                            </button>
+                          </div>
+                        </div>
+                      </article>
+                    </div>
+                  </div>
+                </div>
+              </details>
+
+              <section class="followup-step" id="extra-years-followup">
+                <div class="followup-card">
+                  <p class="followup-kicker">Your next step</p>
+                  <div class="followup-heading">
+                    <h3>See how small changes can add big years to your life</h3>
+                    <button
+                      type="button"
+                      class="video-help-trigger video-help-trigger--on-dark"
+                      data-video-id="sCK-GDaqghE"
+                      data-video-url="https://www.youtube.com/embed/sCK-GDaqghE"
+                      data-video-watch="https://www.youtube.com/watch?v=sCK-GDaqghE"
+                      data-video-title="Small habits, longer life overview"
+                      aria-haspopup="dialog"
+                    >
+                      Watch explainer
+                    </button>
+                  </div>
+                  <p class="followup-copy">
+                    Based on your answers so far, staying consistent could unlock up to
+                    <strong id="extra-years-preview-days">—</strong>
+                    of healthy living (<span id="extra-years-preview-years">—</span>).
+                  </p>
+                  <p class="followup-subcopy">
+                    Use this step to capture what you’d do with that extra time—it keeps your plan personal and memorable.
+                  </p>
+                  <button type="button" class="glass-button primary" id="extra-years-open">
+                    Explore this step
+                  </button>
+                </div>
+                <input type="hidden" id="extra-years-other-storage">
+              </section>
+
+           
+          </div></section>
+        
+
+        <div class="flow-nav">
+          <button type="button" class="glass-button" data-action="back">Back</button>
+          <button type="button" class="glass-button primary" data-action="next">Calculate My Risk</button>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <p>© <span id="year"></span> My Heart Fitness. Precision wellness analytics.</p>
+      </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.2.0/crypto-js.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"
+      integrity="sha512-o9kGfakTfLZNVVRFlE0YyqS/fWznuaCG2lLBVmOAXoJ1Bs8LojRxurx8WcN6i/KHS4Y5E9O+V1YQUdvG5yY0mA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+      id="jspdf-lib"
+      defer
+    ></script>
+    <script src="population-data.js" defer></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="user-details.js" defer></script>
+    <script src="script.js" defer></script>
+  
+  <div class="extra-years-modal" id="extra-years-modal" aria-hidden="true">
+    <div class="extra-years-modal__backdrop" data-extra-years-dismiss></div>
+    <div class="extra-years-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="extra-years-modal-title">
+      <button type="button" class="extra-years-modal__close" id="extra-years-close" aria-label="Close this step">
+        ×
+      </button>
+      <h3 class="extra-years-modal__title" id="extra-years-modal-title">
+        See how small changes can add big years to your life
+      </h3>
+      <div class="details-body details-body--extra-years">
+        <div class="extra-years-copy extra-years-copy--modal">
+          <p id="extra-years-intro">
+            At your age, staying consistent could unlock up to
+            <strong id="extra-years-days">—</strong>
+            of extra healthy living (<span id="extra-years-years">—</span>).
+          </p>
+          <label for="extra-years-slider" class="slider-label">Adjust your effort to see what changes</label>
+          <input type="range" id="extra-years-slider" min="10" max="100" step="10" value="100">
+          <p class="extra-years-effort">
+            By putting in <strong id="extra-effort-output">100%</strong> effort you could gain up to
+            <strong id="extra-effort-days">—</strong>.
+          </p>
+        </div>
+        <p class="extra-years-question">
+          If you had these many extra years of life, what would you do?
+        </p>
+        <div class="extra-years-gallery" role="group" aria-label="Choose how you would spend extra years">
+          <button
+            type="button"
+            class="extra-years-option"
+            data-extra-years-choice="Family & Loved Ones"
+            aria-pressed="false"
+            data-extra-years-key="family"
+          >
+            <img src="family.png" alt="Spending more time with family" loading="lazy">
+            <span>Family &amp; Loved Ones</span>
+          </button>
+          <button
+            type="button"
+            class="extra-years-option"
+            data-extra-years-choice="Travel & Exploration"
+            data-extra-years-key="travel"
+            aria-pressed="false"
+          >
+            <img src="travel.png" alt="Traveling the world" loading="lazy">
+            <span>Travel &amp; Exploration</span>
+          </button>
+          <button
+            type="button"
+            class="extra-years-option"
+            data-extra-years-choice="Peace & Mindfulness"
+            data-extra-years-key="peace"
+            aria-pressed="false"
+          >
+            <img src="peace.png" alt="Enjoying peace and mindfulness" loading="lazy">
+            <span>Peace &amp; Mindfulness</span>
+          </button>
+          <button
+            type="button"
+            class="extra-years-option"
+            data-extra-years-choice="Health & Vitality"
+            data-extra-years-key="health"
+            aria-pressed="false"
+          >
+            <img src="health.png" alt="Investing in personal health" loading="lazy">
+            <span>Health &amp; Vitality</span>
+          </button>
+          <button
+            type="button"
+            class="extra-years-option extra-years-option--other"
+            id="extra-years-other-trigger"
+            aria-expanded="false"
+            aria-controls="extra-years-other-panel"
+          >
+            Tap here to tell us something else
+        </button>
+        </div>
+
+        <div
+          class="extra-years-other"
+          id="extra-years-other-panel"
+          aria-hidden="true"
+        >
+          <label for="extra-years-other-input" class="extra-years-other-label">
+            Tell us what you would do with those extra years:
+          </label>
+          <textarea
+            id="extra-years-other-input"
+            rows="3"
+            placeholder="Maybe launch a passion project, move closer to nature, or something else entirely..."
+          ></textarea>
+        </div>
+        <input type="hidden" id="extra-years-answer" name="extra-years-answer">
+      </div>
+    </div>
+  </div>
+
+  <div class="video-modal" id="video-modal" aria-hidden="true">
+    <div class="video-modal__backdrop" data-video-close></div>
+    <div
+      class="video-modal__dialog"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="video-modal-title"
+      tabindex="-1"
+    >
+      <button type="button" class="video-modal__close" data-video-close aria-label="Close video explainer">
+        ×
+      </button>
+      <div class="video-modal__body">
+        <p class="video-modal__eyebrow">Need a deeper dive?</p>
+        <h3 class="video-modal__title" id="video-modal-title">Video explainer</h3>
+        <div class="video-modal__frame">
+          <iframe
+            id="video-modal-frame"
+            src=""
+            title="Video explainer"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+            loading="lazy"
+          ></iframe>
+        </div>
+        <p class="video-modal__fallback" id="video-modal-fallback" hidden>
+          Having trouble viewing?&nbsp;
+          <a id="video-modal-fallback-link" href="#" target="_blank" rel="noopener">
+            Watch on YouTube
+          </a>
+        </p>
+      </div>
+    </div>
+  </div>
+
+
+</body></html>
